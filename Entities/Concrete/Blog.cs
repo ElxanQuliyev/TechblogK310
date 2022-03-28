@@ -1,4 +1,4 @@
-﻿using Entities.Abstract;
+﻿using Core.DataAccess.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +14,7 @@ namespace Entities.Concrete
         public string? Description { get; set; }
         public string? PhotoUrl { get; set; }
         public int CategoryId { get; set; }
-        public virtual Category Category { get; set; }
+        public bool IsDeleted { get; set; }
+        public virtual Category? Category { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using DataAccess.EntityFramework;
+﻿using Business.Abstract;
+using DataAccess.EntityFramework;
 using Entities.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,9 +11,9 @@ namespace WebApi.Controllers
     [ApiController]
     public class CategoryController : ControllerBase
     {
-        EfCategoryDal _dal;
+        private ICategoryManager _dal;
 
-        public CategoryController(EfCategoryDal dal)
+        public CategoryController(ICategoryManager dal)
         {
             _dal = dal;
         }
@@ -21,20 +22,21 @@ namespace WebApi.Controllers
         [HttpGet]
         public IEnumerable<Category> Get()
         {
-            return _dal.GetAll();
+            return _dal.GetAllCategories();
         }
 
         // GET api/<CategoryController>/5
         [HttpGet("{id}")]
         public Category Get(int id)
         {
-            return _dal.Get(c => c.Id == id);
+            return _dal.GetCategory(id);
         }
 
         // POST api/<CategoryController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Category category)
         {
+            _dal.AddCategory(category);
         }
 
         // PUT api/<CategoryController>/5

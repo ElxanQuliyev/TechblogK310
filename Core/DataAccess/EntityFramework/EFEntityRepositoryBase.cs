@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Core.DataAccess.Abstract;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 namespace Core.DataAccess.EntityFramework
 {
     public class EFEntityRepositoryBase<TContext, TEntity> : IEntityRepository<TEntity>
-        where TEntity : class, new()
+        where TEntity : class, IEntity,new()
         where TContext : DbContext, new()
     {
         public void Add(TEntity entity)

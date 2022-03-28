@@ -1,4 +1,4 @@
-﻿using Entities.Abstract;
+﻿using Core.DataAccess.Abstract;
 
 namespace Entities.Concrete
 {
@@ -7,5 +7,7 @@ namespace Entities.Concrete
         public int Id { get; set; }
         public string Name { get; set; } = null!;
         public string? PhotoUrl { get; set; }
+        public bool IsDeleted { get; set; }
+
     }
 }

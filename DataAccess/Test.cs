@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entities.Abstract
+namespace DataAccess
 {
-    public interface IEntity
+    public class Test
     {
+        public void Add(int a) 
+        {
+            Console.WriteLine(a);
+        }
     }
 }

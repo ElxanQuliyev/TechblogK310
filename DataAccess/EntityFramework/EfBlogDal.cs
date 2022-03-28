@@ -1,4 +1,5 @@
 ﻿using Core.DataAccess.EntityFramework;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,8 @@ using System.Threading.Tasks;
 
 namespace DataAccess.EntityFramework
 {
-    public class EfBlogDal:EFEntityRepositoryBase<BlogDbContext,Blog>
+    public class EfBlogDal:EFEntityRepositoryBase<BlogDbContext,Blog>,IBlogDal
     {
+
     }
 }
