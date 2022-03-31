@@ -9,8 +9,11 @@ using System.Threading.Tasks;
 
 namespace DataAccess.EntityFramework
 {
-    public class EfBlogDal:EFEntityRepositoryBase<BlogDbContext,Blog>,IBlogDal
+    public class EfBlogDal : EFEntityRepositoryBase<BlogDbContext, Blog>, IBlogDal
     {
-
+        public void Search()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

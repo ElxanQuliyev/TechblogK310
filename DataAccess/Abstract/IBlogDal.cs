@@ -10,5 +10,7 @@ namespace DataAccess.Abstract
 {
     public interface IBlogDal:IEntityRepository<Blog>
     {
+        void Search();
+
     }
 }
